@@ -33,8 +33,8 @@ net = jetson.inference.detectNet("ssd-mobilenet-v2", threshold=0.5)
 
 # Specify the path to the image to be detected
 image_paths = [
-    "/home/nvidia/jetson-inference/data/images/test_image1.jpg",
-    "/home/nvidia/jetson-inference/data/images/test_image2.jpg"
+    "/home/nvidia/Desktop/images/test_image1.jpg",
+    "/home/nvidia/Desktop/images/test_image2.jpg"
 ]
 
 # Execute checks on a per-file basis and output the results
@@ -45,10 +45,10 @@ for img_path in image_paths:
     # Load images
     img = jetson.utils.loadImage(img_path)
 
-    # Object Detection Execution
+    # Object detection execution
     detections = net.Detect(img)
 
-    # 输出检测结果
+    # Output detection results
     for d in detections:
         print(f"ClassID: {d.ClassID}")
         print(f"Confidence: {d.Confidence:.3f}")
